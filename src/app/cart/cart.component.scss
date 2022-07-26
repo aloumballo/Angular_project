@@ -1,0 +1,77 @@
+.cartglobal{
+height: 50vh;
+width:20vw;
+border: 1px solid;
+
+margin: 10px;
+background-color: rgb(189, 189, 189);
+border-radius: 10px;
+position: relative;
+
+}
+
+.cartprix{
+    width:30%;
+    height: 5vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.cartajout{
+
+    width: 10%;
+    height: 5vh;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    
+   left: 0;
+border-radius: 10px;
+    right: 0;
+    margin: 10px;
+    
+}
+
+.cartimage{
+    width: 90%;
+    height: 25vh;
+    background-image: url(/assets/app.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    background-color: rgb(254, 254, 254);
+    position: absolute;
+    top: 10vh;
+    left: 5%;
+    right: 5%;
+border-radius: 10px;
+}
+
+.cartnom{
+
+width: 60%;
+    height: 5vh;
+    background-color: rgb(254, 254, 254);
+    position: absolute;
+ 
+    left: 5%;right: 25%;
+    border-radius: 10px 0 0 10px;
+    bottom: 15px;
+    margin-bottom: 5px;
+    
+}
+
+
+.cartdetails{
+    width: 30%;
+    height: 5vh;
+    background-color: rgb(118, 118, 118);
+    position: absolute;
+    border-radius: 0 10px 10px 0;
+    right: 5%;
+
+    bottom: 15px;
+    margin-bottom: 5px;
+}
