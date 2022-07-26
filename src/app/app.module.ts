@@ -3,31 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { FooterComponent } from './layout/footer/footer.component';
 import { CatalogueComponent } from './client/catalogue/catalogue.component';
-import { CartComponent } from './cart/cart.component';
 import { ContenucartComponent } from './contenucart/contenucart.component';
 import { RouterModule } from '@angular/router';
-
+import { CompoComponent } from './compo/compo.component';
+import { CartComponent } from './client/cart/cart.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    FooterComponent,
-    CatalogueComponent,
-    
-
     AppComponent,
-     CartComponent,
-     ContenucartComponent
+    
+    
+    ContenucartComponent,
+    CompoComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
-    
+    RouterModule,
+    HttpClientModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

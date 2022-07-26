@@ -10,7 +10,6 @@ export class DetailsBurgerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-   // alert('ok')
   }
 
 }
