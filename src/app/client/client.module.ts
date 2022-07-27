@@ -6,11 +6,15 @@ import { PanierComponent } from './panier/panier.component';
 import { MenuBurgerComponent } from './menu-burger/menu-burger.component';
 import { DetailsMenuComponent } from './details-menu/details-menu.component';
 import { DetailsBurgerComponent } from './details-burger/details-burger.component';
-import { CatalogueComponent } from './catalogue/catalogue.component';
+import { CatalogueComponent } from './pages/catalogue/catalogue.component';
 import { BurgerSimpleComponent } from './burger-simple/burger-simple.component';
 import { CartComponent } from './cart/cart.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { CatalogueMenuComponent } from './pages/catalogue-menu/catalogue-menu.component';
+import { CatalogueBurgerComponent } from './pages/catalogue-burger/catalogue-burger.component';
+import { ListeCatalogueComponent } from './components/liste-catalogue/liste-catalogue.component';
+import { LayoutModule } from './layout/layout.module';
 
 
 
@@ -24,13 +28,15 @@ import { FooterComponent } from './layout/footer/footer.component';
     DetailsBurgerComponent,
     CatalogueComponent,
     BurgerSimpleComponent,
-    HeaderComponent,
-    FooterComponent,
+    CatalogueMenuComponent,
+    CatalogueBurgerComponent,
+    ListeCatalogueComponent,
    
   ],
   imports: [
     CommonModule,
     ClientRoutingModule,
+    LayoutModule
   
   ],
   
