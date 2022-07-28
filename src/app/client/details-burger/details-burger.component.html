@@ -24,13 +24,9 @@
     <!-- -------------------------------------------- -->
     <div class="col">
       <div class="card text-center" style="width: 18rem">
-        
         <div class="card-body">
-          <h5 class="card-title">Burger Simple</h5>
-          <p class="card-text">
-            frits burger viande oeuf <br />
-            avec triple cheezburger
-          </p>
+          <h5 class="card-title">{{ detailProduit?.nom }}</h5>
+          <p class="card-text">frits {{ detailProduit?.nom }}</p>
         </div>
         <div class="list-group">
           <a
@@ -55,12 +51,12 @@
           </span>
 
           <div class="card-body">
-            <h5 class="card-title">Quantite</h5>
+            <h5 class="card-title">quantite</h5>
             <p class="card-text">dgdgqsqsx</p>
             <hr />
-            <span class="float-left btn btn-sm btn-outline-danger disabled"
-              >4.000.000FCFA</span
-            >
+            <span class="float-left btn btn-sm btn-outline-danger disabled">{{
+              detailProduit?.prix
+            }}</span>
             <span class="float-left btn btn-sm disabled">Ref: 67dh6dgo</span>
           </div>
         </div>

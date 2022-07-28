@@ -1,22 +1,30 @@
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 18rem">
   <div class="card-header">
     <div class="row">
       <div class="col-4">+</div>
-      <div class="col-8 "> <span class="float-end">{{produit?.prix}} CFA</span> </div>
+      <div class="col-8">
+        <span class="float-end">{{ produit?.prix }} CFA</span>
+      </div>
     </div>
   </div>
-  <img src="data:image/png;base64,{{produit?.image}}" class="card-img-top" alt="...">
+  <img
+    src="data:image/png;base64,{{ produit?.image }}"
+    class="card-img-top"
+    alt="..."
+  />
   <div class="card-body">
-     <div class="row">
+    <div class="row">
       <div class="col-6">
         <span>Nom du Burger</span>
       </div>
-      <div class="col-6"><button class="btn btn-outline-primary btn-sm float-end" [routerLink]="['/details']">details</button></div>
-      
-     </div>
+      <div class="col-6">
+        <button
+          class="btn btn-outline-primary btn-sm float-end"
+          routerLink="details/{{ produit?.id }}"
+        >
+          details
+        </button>
+      </div>
+    </div>
   </div>
 </div>
-
-
-
-

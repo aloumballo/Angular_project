@@ -15,6 +15,7 @@ import { CatalogueMenuComponent } from './pages/catalogue-menu/catalogue-menu.co
 import { CatalogueBurgerComponent } from './pages/catalogue-burger/catalogue-burger.component';
 import { ListeCatalogueComponent } from './components/liste-catalogue/liste-catalogue.component';
 import { LayoutModule } from './layout/layout.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -36,7 +37,8 @@ import { LayoutModule } from './layout/layout.module';
   imports: [
     CommonModule,
     ClientRoutingModule,
-    LayoutModule
+    LayoutModule,
+    RouterModule
   
   ],
   
