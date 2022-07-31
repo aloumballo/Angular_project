@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @Output() prodClick: EventEmitter<string> = new EventEmitter;
 
   constructor(private router:Router) { }
 
@@ -14,7 +15,13 @@ export class HeaderComponent implements OnInit {
   }
 
   onLoadView() {
-    this.router.navigateByUrl("/client/menu")
+    //this.router.navigateByUrl("/?type=menu")
+  }
+
+  produitClick(x: string) {
+    // alert(x)
+    this.prodClick.emit(x)
+    // console.log( this.prodClick.emit(x))
   }
 
 }

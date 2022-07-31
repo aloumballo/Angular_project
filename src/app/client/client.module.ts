@@ -11,7 +11,7 @@ import { BurgerSimpleComponent } from './burger-simple/burger-simple.component';
 import { CartComponent } from './cart/cart.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { CatalogueMenuComponent } from './pages/catalogue-menu/catalogue-menu.component';
+import { CatalogueMenuComponent } from './catalogue-menu/catalogue-menu.component';
 import { CatalogueBurgerComponent } from './pages/catalogue-burger/catalogue-burger.component';
 import { ListeCatalogueComponent } from './components/liste-catalogue/liste-catalogue.component';
 import { LayoutModule } from './layout/layout.module';

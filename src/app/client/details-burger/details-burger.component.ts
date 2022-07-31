@@ -19,8 +19,7 @@ export class DetailsBurgerComponent implements OnInit {
     const id = +Number(this.activeRoute.snapshot.paramMap.get('id'))
     this.mba.getProduit(id).subscribe(
       prod=> this.detailProduit = prod
-    )
-    
+    ) 
    
   }
 
