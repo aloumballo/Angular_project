@@ -4,9 +4,19 @@ import { DetailsBurgerComponent } from './details-burger/details-burger.componen
 import { CatalogueBurgerComponent } from './pages/catalogue-burger/catalogue-burger.component';
 import { CatalogueMenuComponent } from './catalogue-menu/catalogue-menu.component';
 import { CatalogueComponent } from './pages/catalogue/catalogue.component';
+//import { DetailsMenuComponent } from './details-menu/details-menu.component';
+import { DetailsMenuComponent } from './details-menu/details-menu.component';
+
+
+
+
 
 const routes: Routes = [
   { path: '', component: CatalogueComponent },
+   //{ path: 'detmenu', component:DetailsMenuComponent },
+  { path: 'detmenu', component:DetailsMenuComponent },
+
+
   { path: 'menu', component: CatalogueMenuComponent },
   { path: 'burger', component: CatalogueBurgerComponent },
   { path: 'details/:id', component: DetailsBurgerComponent},

@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DetailsMenuComponent } from './client/details-menu/details-menu.component';
 import { CompoComponent } from './compo/compo.component';
 
 const routes: Routes = [
      
 
-  { path: 'client', loadChildren: () => import('./client/client.module').then(m => m.ClientModule) },
-   { path: '', redirectTo: 'client',pathMatch:"full"},
-   { path: 'detmenu', component:DetailsMenuComponent },
+   { path: 'client', loadChildren: () => import('./client/client.module').then(m => m.ClientModule) },
+  { path: '', redirectTo: 'client', pathMatch: "full" },
+   
    { path: "**",component: CompoComponent}
     
 ];

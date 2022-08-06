@@ -16,27 +16,31 @@
   ></button>
   <div class="collapse navbar-collapse" id="collapsibleNavId">
     <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-      <li class="nav-item">
+      <li class="nav-item"routerLinkActive="active" [routerLinkActiveOptions]="{exact :true}">
         <a
           class="nav-link"
           (click)="produitClick('catalogue')"
-          routerLinkActive="active"
+          href=""
           >Catalogue <span class="visually-hidden">(current)</span></a
         >
       </li>
-      <li class="nav-item active">
+      <li class="nav-item "routerLinkActive="active"[routerLinkActiveOptions]="{exact :true}">
         <a
         (click)="produitClick('burger')"
           class="nav-link"
           [routerLink]="[]"
-          routerLinkActive="active"
+          
           >Burger<span class="visually-hidden"></span
         ></a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item"routerLinkActive="active"[routerLinkActiveOptions]="{exact :true}">
         <a
           class="nav-link"
           (click)="produitClick('menu')"
+           
+          [routerLink]="[]"
+         
+          
           >Menu<span class="visually-hidden"></span
         ></a>
       </li>

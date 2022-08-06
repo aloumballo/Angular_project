@@ -1,7 +1,7 @@
 <div class="row">
     
   <app-header (prodClick)="prodClick($event)"></app-header>
-  
+
 </div>
 <div class="row">
  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -28,7 +28,7 @@
 </div>
 <div class="row">
   <div class="col-3" *ngFor="let produit of produits " >    
-    <app-cart [produit]="produit"></app-cart></div>
+    <app-cart [produit]="produit" [type]="type"></app-cart></div>
   
 </div>
 

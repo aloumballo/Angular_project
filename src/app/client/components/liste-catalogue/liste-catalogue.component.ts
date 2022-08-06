@@ -8,6 +8,7 @@ import { Produit } from 'src/app/shared/models/produit';
 })
 export class ListeCatalogueComponent implements OnInit {
   @Input('prod') produits: Produit[] | undefined = []
+  @Input('type') type:string="catalogue"
   @Output() changeCatalogue: EventEmitter<string> = new EventEmitter;
   
   constructor() { }

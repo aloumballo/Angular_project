@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details-menu.component.scss']
 })
 export class DetailsMenuComponent implements OnInit {
+   detailProduit:any
 
   constructor() { }
 

@@ -1,22 +1,25 @@
 <app-header></app-header>
+
+
 <div class="container">
   <div class="row mt-5">
-    <h6 class="display-4">Détails du Burger</h6>
+    <h6 class="display-4" >Détails du {{detailProduit?.nom}}</h6>
   </div>
   <div class="row">
     <div class="col-sm-8 mb-4">
       <div class="card">
         <img
           class="card-img-top"
-          src="/assets/QQEE.jpg"
+          src="data:image/png;base64,{{ detailProduit?.image }}"      
           style="width: 18rem; margin-left: 30%"
           alt="Annonce 1"
         />
-        <div class="card-body row">
+        <div class="card-body row" *ngFor="let frite of frites">
+
           <hr />
           <img src="/assets/as11.jpg" style="width: 10rem" alt="" />
 
-          <img src="/assets/Fries_2.jpg" style="width: 10rem" alt="" />
+          <img src="data:image/png;base64,{{ frite?.image }}" style="width: 10rem" alt="" />
           <img src="/assets/Fries_2.jpg" style="width: 10rem" alt="" />
         </div>
       </div>
@@ -27,12 +30,12 @@
         <div class="card-body">
           <h5 class="card-title">{{ detailProduit?.nom }}</h5>
           <p class="card-text">frits {{ detailProduit?.nom }}</p>
-        </div>
+        </div> 
         <div class="list-group">
           <a
             href="#"
             class="list-group-item list-group-item-action bg-success text-white"
-            ><i class="fas fa-mobile-alt mr-2"></i>Ajater au panier</a
+            ><i class="fas fa-mobile-alt mr-2"> </i> <button [disabled]="!ok">Ajater au panier</button> </a
           >
           <span class="list-group-item list-group-item-action">
             <a href="#"
@@ -51,16 +54,47 @@
           </span>
 
           <div class="card-body">
-            <h5 class="card-title">quantite</h5>
-            <p class="card-text">dgdgqsqsx</p>
+            <h5 class="card-title">{{ detailProduit?.quantite }}</h5>
+            
+            
+
+
+<div class="d-flex mb-4" style="max-width: 300px" >
+                  <button class="btn btn-primary px-3 me-2"
+                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                    <i class="fas fa-minus"></i>
+                  </button>
+
+                  <div class="form-outline">
+                    <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
+                    <label class="form-label" for="form1">Quantity</label>
+                  </div>
+
+                  <button class="btn btn-primary px-3 ms-2"
+                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+
+
+
+
             <hr />
             <span class="float-left btn btn-sm btn-outline-danger disabled">{{
               detailProduit?.prix
-            }}</span>
-            <span class="float-left btn btn-sm disabled">Ref: 67dh6dgo</span>
+            }} f</span>
+           
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+<ng-container *ngIf="detailProduit">
+
+
+
+</ng-container>

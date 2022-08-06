@@ -7,7 +7,8 @@ import { Produit } from 'src/app/shared/models/produit';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-@Input() produit:Produit|null=null
+  @Input() produit: Produit | null = null
+  @Input() type:String="catalogue"
   constructor() { }
 
   ngOnInit(): void {

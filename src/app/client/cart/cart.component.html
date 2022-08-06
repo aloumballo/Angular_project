@@ -20,7 +20,7 @@
       <div class="col-6">
         <button
           class="btn btn-outline-primary btn-sm float-end"
-          routerLink="details/{{ produit?.id }}"
+          routerLink="details/{{ produit?.id }}" [queryParams]="{type:type}"
         >
           details
         </button>

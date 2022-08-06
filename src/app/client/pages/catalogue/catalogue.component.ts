@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Catalogue } from 'src/app/shared/models/catalogue';
@@ -15,7 +15,9 @@ export class CatalogueComponent implements OnInit {
   catalogue$: Observable<Catalogue> | null = null
   catalogue: Catalogue | null = null
   produits: any[] | undefined = []
-  value:any
+  value: any
+  @Input("type") type:string="menu"
+  // type:string="menu"
   constructor(private catalogueService: CatalogueService, private route: Router) { }
   param = this.route.parseUrl(this.route.url).queryParams['type'];
   
@@ -27,18 +29,26 @@ export class CatalogueComponent implements OnInit {
       this.produits=this.catalogue?.produit
     })
     // this.produits = this.catalogue?.produit
-    alert(this.produits)
+    // alert(this.produits)
+    //alert("ok")
   }
 
   changeCatalogue(value:string) {
       switch (value) {
       case "burger":
-          this.produits=this.catalogue?.burger
+          this.produits = this.catalogue?.burger
+          this.type = "burger"
+    // alert("burger")
+          
           break;
       case "menu":
-          this.produits = this.catalogue?.produit
+          this.produits = this.catalogue?.menu
+          this.type = "menu"
+    // alert("menu")
+          
         break;
           this.produits = this.catalogue?.produit
+          
         break;
     }  
   }
