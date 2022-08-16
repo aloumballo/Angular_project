@@ -6,6 +6,7 @@ import { CatalogueMenuComponent } from './catalogue-menu/catalogue-menu.componen
 import { CatalogueComponent } from './pages/catalogue/catalogue.component';
 //import { DetailsMenuComponent } from './details-menu/details-menu.component';
 import { DetailsMenuComponent } from './details-menu/details-menu.component';
+import { PanierComponent } from './panier/panier.component';
 
 
 
@@ -16,7 +17,7 @@ const routes: Routes = [
    //{ path: 'detmenu', component:DetailsMenuComponent },
   { path: 'detmenu', component:DetailsMenuComponent },
 
-
+  { path: 'panier', component: PanierComponent },
   { path: 'menu', component: CatalogueMenuComponent },
   { path: 'burger', component: CatalogueBurgerComponent },
   { path: 'details/:id', component: DetailsBurgerComponent},

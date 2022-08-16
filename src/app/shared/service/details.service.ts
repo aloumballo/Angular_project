@@ -10,7 +10,6 @@ export class DetailsService {
 
   private apiDetails="http://localhost:8000/api/details/"
 
-
   constructor(private http: HttpClient) { }
 
   getDatails(id:number): Observable<any>{

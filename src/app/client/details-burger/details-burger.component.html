@@ -1,26 +1,60 @@
 <app-header></app-header>
 
-
 <div class="container">
   <div class="row mt-5">
-    <h6 class="display-4" >Détails du {{detailProduit?.nom}}</h6>
+    <h6 class="display-4">Détails du {{ detailProduit?.nom }}</h6>
   </div>
   <div class="row">
-    <div class="col-sm-8 mb-4">
-      <div class="card">
+    <div class="col-sm-8 mb-4 row">
+      <div class="card col-mb-4">
         <img
           class="card-img-top"
-          src="data:image/png;base64,{{ detailProduit?.image }}"      
+          src="data:image/png;base64,{{ detailProduit?.image }}"
           style="width: 18rem; margin-left: 30%"
           alt="Annonce 1"
         />
-        <div class="card-body row" *ngFor="let frite of frites">
 
+<div class="papi">
+
+        <div class="card-body" *ngFor="let burgers of detailProduit.menuBurgers">
           <hr />
-          <img src="/assets/as11.jpg" style="width: 10rem" alt="" />
+          <div *ngFor="let burgera of burgers">
 
-          <img src="data:image/png;base64,{{ frite?.image }}" style="width: 10rem" alt="" />
-          <img src="/assets/Fries_2.jpg" style="width: 10rem" alt="" />
+            <img
+              src="data:image/png;base64,{{ burgera.burger.image }}"
+              style="width: 7rem"
+              alt=""
+            />
+            <input
+              type="number"
+              min="1"
+              value="1"
+              aria-label="Search"
+              class="form-control"
+              style="width: 50px"
+            />
+            <h1>{{ burgera.burger.nom }}</h1>
+          </div>
+        </div>
+        <div class="card-body d-flex" *ngFor="let taille of tailles">
+          <ng-container *ngFor="let alou of taille.tailleBoissons">
+            <img
+              src="data:image/png;base64,{{ alou.boisson.image }}"
+              style="width: 10rem"
+              alt=""
+            />
+              <input
+            type="number"
+            min="1"
+            value="1"
+            aria-label="Search"
+            class="form-control"
+            style="width: 50px"
+          />
+          </ng-container>
+        </div>
+
+
         </div>
       </div>
     </div>
@@ -30,71 +64,139 @@
         <div class="card-body">
           <h5 class="card-title">{{ detailProduit?.nom }}</h5>
           <p class="card-text">frits {{ detailProduit?.nom }}</p>
-        </div> 
+        </div>
         <div class="list-group">
           <a
             href="#"
-            class="list-group-item list-group-item-action bg-success text-white"
-            ><i class="fas fa-mobile-alt mr-2"> </i> <button [disabled]="!ok">Ajater au panier</button> </a
-          >
-          <span class="list-group-item list-group-item-action">
-            <a href="#"
-              ><i class="fab fa-facebook-square fa-2x text-primary mr-1"></i
-            ></a>
-            <a href="#"
-              ><i class="fab fa-whatsapp fa-2x text-success mr-1"></i
-            ></a>
-            <a href="#"
-              ><i class="fab fa-twitter fa-2x text-primary mr-1"></i
-            ></a>
-            <a href="#"
-              ><i class="fab fa-instagram fa-2x text-warning mr-1"></i
-            ></a>
-            <a href="#"><i class="fab fa-youtube fa-2x text-danger"></i></a>
-          </span>
+            class="list-group-item list-group-item-action bg-warning text-white"
+            >
+            <button class="lo bg-warning" (click)="addToCart()">Ajater au panier</button>
+          </a>
+
 
           <div class="card-body">
             <h5 class="card-title">{{ detailProduit?.quantite }}</h5>
-            
-            
 
+            <div class="d-flex mb-4" style="max-width: 300px">
+              <button
+                class="btn btn-primary px-3 me-2"
+                onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+              >
+                <i class="fas fa-minus"></i>
+              </button>
 
-<div class="d-flex mb-4" style="max-width: 300px" >
-                  <button class="btn btn-primary px-3 me-2"
-                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                    <i class="fas fa-minus"></i>
-                  </button>
+              <div class="form-outline">
+                <input
+                  id="form1"
+                  min="0"
+                  name="quantity"
+                  value="1"
+                  type="number"
+                  class="form-control"
+                />
+                <label class="form-label" for="form1">Quantity</label>
+              </div>
 
-                  <div class="form-outline">
-                    <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
-                    <label class="form-label" for="form1">Quantity</label>
-                  </div>
-
-                  <button class="btn btn-primary px-3 ms-2"
-                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                    <i class="fas fa-plus"></i>
-                  </button>
-                </div>
-
-
-
+              <button
+                class="btn btn-primary px-3 ms-2"
+                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+              >
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
 
             <hr />
-            <span class="float-left btn btn-sm btn-outline-danger disabled">{{
-              detailProduit?.prix
-            }} f</span>
-           
+            <span class="float-left btn btn-sm btn-outline-danger disabled"
+              >{{ detailProduit?.prix }} f</span
+            >
           </div>
         </div>
+
       </div>
-    </div>
-  </div>
+
+
+
+
+ <!-- -------------------------------------------- -->
+
+
+<div class="lo" > 
+
+<ng-container *ngIf="detailProduit"=='data.menu'>
+      <h5>Composition du menu</h5>
+      <div>
+      
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Image</th>
+              <th scope="col">Nom Produit</th>
+              <th scope="col">Quantite</th>
+              <th scope="col">Prix</th>
+            </tr>
+          </thead>
+          <tbody>
+           
+            <tr *ngFor="let burger of detailProduit.menuBurgers">
+
+            <td> <img src="data:image/png;base64,{{ burger.burger.image }}" alt="" style="width: 4rem;">  </td>
+            <td> {{ burger.burger.nom }} </td>
+            <td> {{ burger.quantite }} </td>
+            <td> {{ burger.burger.prix }} </td>
+  
+            </tr>
+          <!--{{detailProduit.menuPortionFrites|json}}-->
+            <tr *ngFor="let portionFrite of detailProduit.menuPortionFrites">
+
+              <td> <img src="data:image/png;base64,{{ portionFrite.portionFrite.image }}" alt="" style="width: 3rem;">  </td>
+              <td> {{ portionFrite.portionFrite.nom }} </td>
+              <td> {{ portionFrite.portionFrite.quantite }} </td>
+              <td> {{portionFrite.portionFrite.prix }} </td>
+  
+              </tr>
+
+              <tr *ngFor="let taille of tailles">
+                
+                <ng-container *ngFor="let alou of taille.tailleBoissons" >
+                  <td > <img src="data:image/png;base64,{{ alou.boisson.image }}" alt="" style="width: 4rem;"> </td>
+                </ng-container>
+
+                <td> {{ taille.libelle }} </td>
+
+                <ng-container *ngFor="let boisson of taille.tailleBoissons" >
+                <td > {{ boisson.quantite }} </td>
+              </ng-container>
+                <td> {{ taille.prix }} </td>
+    
+
+                </tr>
+
+          </tbody>
+
+        </table>
+      </div>
+
+     </ng-container>
+
+
 </div>
 
 
 
-<ng-container *ngIf="detailProduit">
+
+ <!-- -------------------------------------------- -->
 
 
 
-</ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-container *ngIf="detailProduit"> </ng-container>
+
+
+
+
+
+
+

@@ -1,10 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-warning w-100">
   <a class="navbar-brand" href="#">Logo</a>
-    <img
-    src="/assets/logo.png"
-    class="card-img-top"
-    alt="..."
-  />
+  <img src="/assets/logo.png" class="card-img-top" alt="..." />
   <button
     class="navbar-toggler d-lg-none"
     type="button"
@@ -16,31 +12,30 @@
   ></button>
   <div class="collapse navbar-collapse" id="collapsibleNavId">
     <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-      <li class="nav-item"routerLinkActive="active" [routerLinkActiveOptions]="{exact :true}">
-        <a
-          class="nav-link"
-          (click)="produitClick('catalogue')"
-          href=""
+      <li
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a class="nav-link" (click)="produitClick('catalogue')" href=""
           >Catalogue <span class="visually-hidden">(current)</span></a
         >
       </li>
-      <li class="nav-item "routerLinkActive="active"[routerLinkActiveOptions]="{exact :true}">
-        <a
-        (click)="produitClick('burger')"
-          class="nav-link"
-          [routerLink]="[]"
-          
+      <li
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a (click)="produitClick('burger')" class="nav-link" [routerLink]="[]"
           >Burger<span class="visually-hidden"></span
         ></a>
       </li>
-      <li class="nav-item"routerLinkActive="active"[routerLinkActiveOptions]="{exact :true}">
-        <a
-          class="nav-link"
-          (click)="produitClick('menu')"
-           
-          [routerLink]="[]"
-         
-          
+      <li
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a class="nav-link" (click)="produitClick('menu')" [routerLink]="[]"
           >Menu<span class="visually-hidden"></span
         ></a>
       </li>
@@ -48,27 +43,10 @@
         <a class="nav-link text-dark" href="#">S'inscrire</a>
       </li>
     </ul>
-    
 
-    <img
-    src="/assets/lolo.png" 
-    class="card-img-top bg-warning"
-    alt="..."
-    
-  />
-
-    <img
-    src="/assets/panie.png" 
-    class="card-img-top bg-warning"
-    alt="..."
-    
-  />
-    
-   
-
-
-
-
-    
+    <img src="/assets/lolo.png" class="card-img-top bg-warning" alt="..." />
+    <a routerLink="/client/panier" routerLinkActive="router-link-active">
+      <img src="/assets/panie.png" class="card-img-top bg-warning" alt="..." />
+    </a>
   </div>
 </nav>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Produit } from 'src/app/shared/models/produit';
+import { PanierService } from 'src/app/shared/service/panier.service';
 
 @Component({
   selector: 'app-panier',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./panier.component.scss']
 })
 export class PanierComponent implements OnInit {
+  alouu: any;
+panier:Produit[]=[]
 
-  constructor() { }
+  constructor(private lu: PanierService) { 
+    window.localStorage.removeItem('produit')
+    
+  }
+  items$ = this.lu.items$
+   
 
   ngOnInit(): void {
+    this.alouu = this.lu.items$   
+    
+   
+    
   }
 
 }
