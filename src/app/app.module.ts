@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CatalogueComponent } from './client/pages/catalogue/catalogue.component';
-import { ContenucartComponent } from './contenucart/contenucart.component';
+import { ContenucartComponent } from './client/contenucart/contenucart.component';
 import { RouterModule } from '@angular/router';
 //import { Route,RouterModule,Routes } from '@angular/router';
 

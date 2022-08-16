@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommandeBurger, CommandeMenu, CommandePortionFrite, CommandeTailleBoisson } from 'src/app/shared/models/commande';
 import { Produit } from 'src/app/shared/models/produit';
 import { PanierService } from 'src/app/shared/service/panier.service';
 
@@ -9,7 +10,8 @@ import { PanierService } from 'src/app/shared/service/panier.service';
 })
 export class PanierComponent implements OnInit {
   alouu: any;
-panier:Produit[]=[]
+  panier: Produit[] = []
+  
 
   constructor(private lu: PanierService) { 
     window.localStorage.removeItem('produit')
@@ -22,6 +24,18 @@ panier:Produit[]=[]
     this.alouu = this.lu.items$   
     
    
+    
+  }
+
+  triepanier(tabpanier: Produit[]) {
+    let baseMenu: CommandeMenu[] = []
+    let basePortion: CommandePortionFrite[]
+    let baseBurger: CommandeBurger[]
+    let baseTaille: CommandeTailleBoisson[]
+    tabpanier.forEach(produit => {
+      console.log(produit);
+    }
+    )
     
   }
 
