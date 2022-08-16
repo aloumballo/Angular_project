@@ -12,6 +12,7 @@ import { CompoComponent } from './compo/compo.component';
 import { CartComponent } from './client/cart/cart.component';
 import { HttpClientModule } from "@angular/common/http";
 import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
-    
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   
   providers: [],
